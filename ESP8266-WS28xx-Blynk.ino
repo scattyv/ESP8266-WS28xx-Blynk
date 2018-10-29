@@ -2,7 +2,7 @@
 #include <ArduinoOTA.h>
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
-#include <FastLED.h>
+#include "FastLED.h"
 #include <wifi_credentials.h>
 #include "settings.h"
 
@@ -18,7 +18,7 @@ void setup() {
   WiFi.mode(WIFI_STA);
   Serial.begin(115200);
 #if defined(USE_LOCAL_SERVER)
-  Blynk.begin(AUTH, WIFI_SSID, WIFI_PASS, SERVER);
+  Blynk.begin(AUTH, WIFI_SSID, WIFI_PASS, SERVER, PORT);
 #else
   Blynk.begin(AUTH, WIFI_SSID, WIFI_PASS);
 #endif
@@ -98,6 +98,12 @@ BLYNK_WRITE(vPIN_COLOUR_BLUE) {
 BLYNK_WRITE(vPIN_COLOUR_WHITE) {
   if (varZone == ZONE || varZone == 1 && param.asInt()) {
     updateColours(1, 255, 0, 255);
+    updateWidgets();
+  }
+}
+BLYNK_WRITE(vPIN_COLOUR_PINK) {
+  if (varZone == ZONE || varZone == 1 && param.asInt()) {
+    updateColours(1, 230, 255, 255);
     updateWidgets();
   }
 }

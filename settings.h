@@ -6,14 +6,14 @@
 /*
    Blynk Auth Code
 */
-#define AUTH                        "8e8bf31a58d843e4bc9daaaa4e7abdfd"
+#define AUTH                        "126692c125ab41b48ecdfcb8ef7712a7"
 /*
    WS28xx Config
 */
 
-#define LED_TYPE                    WS2811
+#define LED_TYPE                    WS2812
 #define LED_ARRANGE                 GRB
-#define LED_NUMBER                  100
+#define LED_NUMBER                  38
 #define LED_LIMIT_MILLIAMPS         2000 // Limit current in mA (Must be using FastLED v3.1.1+)
 /*
     Zone - Assign a zone to your hardware
@@ -52,12 +52,13 @@
    Local Server Settings (uncomment to use local server)
 */
 #define USE_LOCAL_SERVER
-#define SERVER                      IPAddress(192, 168, 1, 2)
-#define BLYNK_MSG_LIMIT             400
+#define SERVER                      IPAddress(192, 168, 1, 128)
+#define PORT                        8080
+#define BLYNK_MSG_LIMIT             15
 /*
    Hardware Pins
 */
-#define DATA_PIN                    12 // GPIO12 / D6 on WeMos/NodeMCU ESP8266
+#define DATA_PIN                    6 // GPIO12 / D6 on WeMos/NodeMCU ESP8266
 /*
    Virtual Pins
 */
@@ -73,6 +74,7 @@
 #define vPIN_COLOUR_RED             V6
 #define vPIN_COLOUR_GREEN           V7
 #define vPIN_COLOUR_WHITE           V8
+#define vPIN_COLOUR_PINK            V30
 
 #define vPIN_TERMINAL               V9
 #define vPIN_MANUAL                 V10
